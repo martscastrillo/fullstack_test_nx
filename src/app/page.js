@@ -47,27 +47,9 @@ export default function Home() {
 			[name]: value,
 		}));
 	};
-	const postData =  () => {
-		
-		  const response =  fetch('http://localhost:4000/calc', {
-			method: 'POST',
-			headers: {
-			  'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({ data: 'Hello, world!' })
-		  });
-	  
-		  if (!response.ok) {
-			console.log('err');
-		  }
-	  
-		  const data =  response.json();
-		  console.log('Respuesta del servidor:', data);
-		
-	  };
-	  
-	  // Llamar a la función
-	  postData();
+	
+	
+	
 	  
 
 	const handleSubmit = (event) => {
@@ -76,12 +58,12 @@ export default function Home() {
 		setDataArray((prevDataArray) => [...prevDataArray, ...valuesArray]);
 		setResult(checkArray(dataArray));
 		setInputValues({});
-		/* dataValues(dataArray).then((data) => {
+		dataValues(dataArray).then((data) => {
 			console.log(dataArray);
 			
 			console.log(convertNumbers(dataArray));
-		  }); */
-		  postData();
+		  });
+		  
 		
 		
 		
