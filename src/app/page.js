@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import styles from "./page.module.scss";
+import dataValues from '../../server/data';
 
 export default function Home() {
 	const [dataArray, setDataArray] = useState([]);
 	const [inputValues, setInputValues] = useState({});
 	const [result, setResult] = useState(0);
 
-	
+	const [resultUrl, setResultUrl] = useState({});
 	
 	const convertNumbers = (array) => {
 		return array.map((element) => {
@@ -52,7 +53,11 @@ export default function Home() {
 		setDataArray((prevDataArray) => [...prevDataArray, ...valuesArray]);
 		setResult(checkArray(dataArray));
 		setInputValues({});
-
+		console.log(dataArray);
+		dataValues(dataArray).then((data) => {
+			console.log(dataArray);
+			setResultUrl(data);
+		  });
 		
 	};
 	const handleReset = (event) => {
