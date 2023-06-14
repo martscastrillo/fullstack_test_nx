@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "serv": "node src/app/server.js"
+    "serv": "node server/server.js"
   },
   "dependencies": {
     "eslint": "8.42.0",

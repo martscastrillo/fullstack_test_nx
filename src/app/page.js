@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState } from 'react';
 import styles from "./page.module.scss";
 
 export default function Home() {
@@ -8,6 +8,8 @@ export default function Home() {
 	const [inputValues, setInputValues] = useState({});
 	const [result, setResult] = useState(0);
 
+	
+	
 	const convertNumbers = (array) => {
 		return array.map((element) => {
 			if (!isNaN(element)) {
@@ -50,6 +52,8 @@ export default function Home() {
 		setDataArray((prevDataArray) => [...prevDataArray, ...valuesArray]);
 		setResult(checkArray(dataArray));
 		setInputValues({});
+
+		
 	};
 	const handleReset = (event) => {
 		event.preventDefault();
@@ -57,7 +61,7 @@ export default function Home() {
 		setResult(0);
 		setInputValues({});
 	};
-
+	
 	return (
 		<div className={styles.superbox}>
 			<h1 className={styles.superbox__h1}>full stack test</h1>
@@ -122,6 +126,7 @@ export default function Home() {
 
 			<div className={styles.superbox__results}>
 				<h2>history results: {`${result}`}</h2>
+			
 			</div>
 		</div>
 	);
