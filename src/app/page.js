@@ -6,8 +6,7 @@ import styles from "./page.module.scss";
 export default function Home() {
 	const [dataArray, setDataArray] = useState([]);
 	const [inputValues, setInputValues] = useState({});
-  const [result, setResult] = useState(0);
-
+	const [result, setResult] = useState(0);
 
 	const convertNumbers = (array) => {
 		return array.map((element) => {
@@ -49,13 +48,13 @@ export default function Home() {
 		event.preventDefault();
 		const valuesArray = Object.values(inputValues);
 		setDataArray((prevDataArray) => [...prevDataArray, ...valuesArray]);
-    setResult (checkArray(dataArray));
+		setResult(checkArray(dataArray));
 		setInputValues({});
 	};
 	const handleReset = (event) => {
 		event.preventDefault();
 		setDataArray([]);
-    setResult (0);
+		setResult(0);
 		setInputValues({});
 	};
 
