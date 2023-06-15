@@ -33,11 +33,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+Es _importante_ tener node en una versión mínimo 16 para poder levantar el proyecto.
+
 ### El proyecto se pide:
 
 You have to build a Full-Stack web app to calc all numeric params in a list. User will be able to see all previous queries too.
 
-#### El proyecto se pide:Requirements:
+#### Requirements:
 
 An endpoint /calc that receives an undetermined number of arguments and returns the sum of those arguments that are numerical (you could receive different types of data).
 A second endpoint /history that returns all previous calls to /calc.

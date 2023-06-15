@@ -1,5 +1,5 @@
 .body{
-	color:rgb(28, 28, 124);
+	color:rgb(14, 158, 74);
 	background-color: rgb(168, 202, 253);
 }
 .superbox {
@@ -23,7 +23,12 @@
 		justify-content: center;
 		gap: 20px;
 		border: 0px;
-	
+		&__error{
+			color: red;
+			font-size: 12px;
+			text-align: center;
+			margin: 32px;
+		}
 		&__fieldset {
 			border: 0px;
 			display: flex;
@@ -36,7 +41,7 @@
 				font-size: 32px;
 			}
 			input {
-				border: 1px solid rgb(28, 28, 124);
+				border: 1px solid rgb(14, 158, 74);
 				border-radius: 5px;
 				padding: 20px;
 				text-transform: uppercase;
@@ -45,7 +50,7 @@
 		&__submit {
 			text-transform: uppercase;
 			font-family: "Poppins", sans-serif;
-			background-color: rgb(28, 28, 124);
+			background-color: rgb(14, 158, 74);
 			cursor: pointer;
 			transition: all 0.5s ease;
 			border: 0;
@@ -53,7 +58,33 @@
 			color: white;
 			font-weight: 600;
 			padding: 16px 43px;
-		
+			.reset{
+				background-color: rgb(11, 153, 204);
+			}
+		}
+		&__reset{
+			text-transform: uppercase;
+			font-family: "Poppins", sans-serif;
+			background-color: rgb(11, 153, 204);
+			cursor: pointer;
+			transition: all 0.5s ease;
+			border: 0;
+			border-radius: 20px;
+			color: white;
+			font-weight: 600;
+			padding: 16px 43px;
+		}
+		&__add{
+			text-transform: uppercase;
+			font-family: "Poppins", sans-serif;
+			background-color: rgb(204, 124, 11);
+			cursor: pointer;
+			transition: all 0.5s ease;
+			border: 0;
+			border-radius: 20px;
+			color: white;
+			font-weight: 600;
+			padding: 16px 43px;
 		}
         &__extradiv{
             display: flex;
@@ -65,6 +96,7 @@
 	&__results {
         margin-top: 30px;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		gap: 10px;

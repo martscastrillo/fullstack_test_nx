@@ -12,7 +12,7 @@ app.listen(serverPort, () => {
  
 });
 
-const hist = [];
+
 
 app.post("/calc", (req, res) => {
 /*   const respuesta = {
