@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import styles from "./page.module.scss";
+import dataValues from '../../server/data';
 
 export default function Home() {
 	const [dataArray, setDataArray] = useState([]);
 	const [inputValues, setInputValues] = useState({});
 	const [result, setResult] = useState(0);
 
-	
-	
+
 	const convertNumbers = (array) => {
 		return array.map((element) => {
 			if (!isNaN(element)) {
@@ -19,11 +19,11 @@ export default function Home() {
 			}
 		});
 	};
-
+	
 	const checkAllNumbers = (array) => {
 		return array.every((element) => typeof element === "number");
 	};
-
+	
 	const addArray = (array) => {
 		let total = 0;
 		array.forEach((elemento) => {
@@ -31,6 +31,14 @@ export default function Home() {
 		});
 		return total;
 	};
+	
+	const checkArray = (array) => {
+		const arr = convertNumbers(array);
+		if (checkAllNumbers(arr)) {
+			return addArray(arr);
+		}
+	};
+	
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -39,12 +47,10 @@ export default function Home() {
 			[name]: value,
 		}));
 	};
-	const checkArray = (array) => {
-		const arr = convertNumbers(array);
-		if (checkAllNumbers(arr)) {
-			return addArray(arr);
-		}
-	};
+	
+	
+	
+	  
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -52,7 +58,14 @@ export default function Home() {
 		setDataArray((prevDataArray) => [...prevDataArray, ...valuesArray]);
 		setResult(checkArray(dataArray));
 		setInputValues({});
-
+		dataValues(dataArray).then((data) => {
+			console.log(dataArray);
+			
+			console.log(convertNumbers(dataArray));
+		  });
+		  
+		
+		
 		
 	};
 	const handleReset = (event) => {
